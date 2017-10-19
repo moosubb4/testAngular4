@@ -1,0 +1,7 @@
+<h2>TodoList</h2>
+<ul>
+  <!-- <li style="list-style-type: none" *ngFor="let user of userList">{{user.id}}. {{user.name}}{{user.surname}} {{user.age}}</li> -->
+  <li style="list-style-type: none" *ngFor="let todos of todoList">{{todos.id}}. {{todos.title}}</li>
+</ul>
+<button (click)="addSkill()">AddSkills</button>
+<button (click)="addTodo()">AddTodo</button>

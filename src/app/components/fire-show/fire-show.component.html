@@ -1,0 +1,30 @@
+<h2>Show Firestore</h2>
+<!-- <div>{{users}}</div> -->
+<ul>
+  <li style="list-style-type: none" *ngFor="let user of user$ | async">
+    {{user.id}}. {{user.name}} {{user.surname}} {{user.age}}
+    <button (click)=" delUser(user)"> X </button>
+    <button (click)=toggleEdit()>Edit</button>
+    <br/>
+    <br/>
+    <!-- <b>{{user | json}}</b> -->
+  </li>
+</ul>
+
+<div *ngIf="isEditable == true">
+  <form>
+    <div>
+      <label for="name"> Name: </label>
+      <input type="text" name="name" [(ngModel)]="newName">
+    </div>
+    <div>
+      <label for="surname"> Surnme: </label>
+      <input type="text" name="surname" [(ngModel)]="newSurname">
+    </div>
+    <div>
+      <label for="age"> Age: </label>
+      <input type="text" name="age" [(ngModel)]="newAge">
+    </div>
+    <button (click)="updateUser(user)">Update</button>
+  </form>
+</div>
