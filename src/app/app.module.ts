@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { HttpModule } from "@angular/http";
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+// import { AlertModule } from "ngx-bootstrap";
 // Components
 import { AppComponent } from "./app.component";
 import { ShowComponent } from "./components/show/show.component";
@@ -14,8 +15,8 @@ import { FireCloundService } from "./services/fire-clound.service";
 // FireStore
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
-import { environment } from "../environments/environment.prod";
-// import { environment } from "../environments/environment";
+// import { environment } from "../environments/environment.prod";
+import { environment } from "../environments/environment";
 
 const appRoutes: Routes = [
   { path: "", component: FireShowComponent },

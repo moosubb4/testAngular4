@@ -1,31 +1,70 @@
-<h2>Show Firestore</h2>
-<!-- <div>{{users}}</div> -->
-<ul>
+<h2>
+  Show Firestore</h2>
+<!-- <ul>
   <li style="list-style-type: none" *ngFor="let user of user$ | async">
     {{user.id}}. {{user.name}} {{user.surname}} {{user.age}}
-    <button (click)=" delUser(user)"> X </button>
-    <button (click)=toggleEdit()>Edit</button>
+    <button (click)=" delUser(user)" class="btn btn-danger"> X </button>
+    <button (click)=toggleEdit() class="btn btn-warning">Edit</button>
     <br/>
     <br/>
-    <!-- <b>{{user | json}}</b> -->
-  </li>
-</ul>
+     <b>{{user | json}}</b>
+</li>
+</ul> -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <th>No.</th>
+      <th>Name-Surname</th>
+      <th>Age</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of user$ | async">
+        <td>{{user.id}}.</td>
+        <td>{{user.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user.surname}}</td>
+        <td>{{user.age}}</td>
+        <td>
+          <button (click)="getUserEdit(user)" class="btn btn-warning">Edit</button>
+        </td>
+        <td>
+          <button (click)=" delUser(user)" class="btn btn-danger"> X </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<div *ngIf="isEditable == true">
-  <form>
-    <table></table>
-    <div>
-      <label for="name"> Name: </label>
-      <input type="text" name="name" [(ngModel)]="newName">
-    </div>
-    <div>
-      <label for="surname"> Surnme: </label>
-      <input type="text" name="surname" [(ngModel)]="newSurname">
-    </div>
-    <div>
-      <label for="age"> Age: </label>
-      <input type="text" name="age" [(ngModel)]="newAge">
-    </div>
-    <button (click)="updateUser(user)">Update</button>
-  </form>
+  <br/>
+  <table *ngIf="isEditable == true" class="table" class="text-right">
+    <tr>
+      <td>
+        <label for="name"> Name: </label>
+      </td>
+      <td>
+        <input type="text" name="name" [(ngModel)]="newName">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="surname"> Surnme: </label>
+      </td>
+      <td>
+        <input type="text" name="surname" [(ngModel)]="newSurname">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="age"> Age: </label>
+      </td>
+      <td>
+        <input type="text" name="age" [(ngModel)]="newAge">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <br/>
+        <button (click)="updateUser()" class="btn btn-success">Update</button>
+      </td>
+    </tr>
+  </table>
 </div>

@@ -1,21 +1,59 @@
 <h2>Add Firestore</h2>
-<form>
-  <!-- <div>
+<div class="container">
+  <form>
+    <!-- <div>
     <label for="id"> ID: </label>
     <input type="text" name="id" [(ngModel)]="addId">
      {{user.id+1}}
   </div> -->
-  <div>
-    <label for="name"> Name: </label>
-    <input type="text" name="name" [(ngModel)]="addName">
-  </div>
-  <div>
-    <label for="surname"> Surnme: </label>
-    <input type="text" name="surname" [(ngModel)]="addSurname">
-  </div>
-  <div>
-    <label for="age"> Age: </label>
-    <input type="text" name="age" [(ngModel)]="addAge">
-  </div>
-  <button (click)="addUser()">Add</button>
-</form>
+    <!-- <div class="row">
+      <div class="col-lg-12">
+        <label for="name"> Name: </label>
+        <input type="text" name="name" [(ngModel)]="addName">
+      </div>
+      <div class="col-lg-12">
+        <label for="surname"> Surnme: </label>
+        <input type="text" name="surname" [(ngModel)]="addSurname">
+      </div>
+      <div class="col-lg-12">
+        <label for="age"> Age: </label>
+        <input type="text" name="age" [(ngModel)]="addAge">
+      </div>
+      <div class="col-lg-12">
+        <button (click)="addUser()" class="btn btn-success">Add</button>
+      </div>
+    </div> -->
+    <table class="text-right">
+      <tr>
+        <td>
+          <label for="name"> Name&nbsp;:&nbsp; </label>
+        </td>
+        <td>
+          <input type="text" name="name" [(ngModel)]="addName">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="surname"> Surname&nbsp;:&nbsp; </label>
+        </td>
+        <td>
+          <input type="text" name="surname" [(ngModel)]="addSurname">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="age"> Age&nbsp;:&nbsp; </label>
+        </td>
+        <td>
+          <input type="text" name="age" [(ngModel)]="addAge">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <br/>
+          <button (click)="addUser()" class="btn btn-success">Add</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

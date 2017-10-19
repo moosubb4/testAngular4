@@ -1,0 +1,14 @@
+nav {
+  background-color: rgb(24, 82, 207);
+  font-size: 125%;
+}
+nav a {
+  border: 1px solid rgb(11, 85, 245);
+  background-color: rgba(233, 229, 229, 0.726);
+}
+h1 {
+  color: aliceblue;
+}
+/* #div1 {
+  background-color: #333333;
+} */

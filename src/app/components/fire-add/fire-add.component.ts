@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Component, OnInit } from "@angular/core";
+import {
+  AngularFirestore,
+  AngularFirestoreCollection,
+  AngularFirestoreDocument
+} from "angularfire2/firestore";
+import { Observable } from "rxjs/Observable";
+import "rxjs/add/operator/map";
 
 export interface User {
   id: number;
@@ -11,12 +15,11 @@ export interface User {
 }
 
 @Component({
-  selector: 'app-fire-add',
-  templateUrl: './fire-add.component.html',
-  styleUrls: ['./fire-add.component.css']
+  selector: "app-fire-add",
+  templateUrl: "./fire-add.component.html",
+  styleUrls: ["./fire-add.component.css"]
 })
 export class FireAddComponent implements OnInit {
-
   // Add
   usersCollection: AngularFirestoreCollection<User>;
   users: Observable<User[]>;
@@ -30,7 +33,7 @@ export class FireAddComponent implements OnInit {
   usersList: any;
   ids: number;
 
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore) {}
 
   ngOnInit() {
     this.getUsers();
@@ -38,27 +41,36 @@ export class FireAddComponent implements OnInit {
   }
 
   getUsers() {
-    this.usersCollection = this.afs.collection('user', ref => {
-      return ref.orderBy('id', 'desc').limit(1);
+    this.usersCollection = this.afs.collection("user", ref => {
+      return ref.orderBy("id", "desc").limit(1);
     });
     this.users = this.usersCollection.valueChanges();
-    this.users.subscribe((data) => {
+    this.users.subscribe(data => {
       this.usersList = data;
-      this.ids = data[0]['id'];
+      this.ids = data[0]["id"];
       // console.log(data);
     });
   }
 
   addUser() {
-    this.usersCollection = this.afs.collection('user');
+    this.usersCollection = this.afs.collection("user");
     this.users = this.usersCollection.valueChanges();
     // const id = this.afs.createId();
-    this.usersCollection.add({
-      id: Number(this.ids) + 1,
-      name: this.addName,
-      surname: this.addSurname,
-      age: Number(this.addAge)
-    });
+    let idPlus = this.ids;
+    if (isNaN(idPlus) === true) {
+      console.log('"NAN" ');
+      idPlus = 0;
+    } else {
+      console.log("");
+    }
+    this.usersCollection
+      .add({
+        id: Number(idPlus) + 1,
+        name: this.addName,
+        surname: this.addSurname,
+        age: Number(this.addAge)
+      })
+      .then(_ => alert("Add Success"))
+      .catch(error => console.log(error));
   }
-
 }
