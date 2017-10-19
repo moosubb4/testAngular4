@@ -39,7 +39,7 @@ export class FireShowComponent implements OnInit {
 
   usersList: any;
   snapshot: any;
-  private isEditable: boolean;
+   isEditable: boolean;
 
   constructor(private afs: AngularFirestore) {
 

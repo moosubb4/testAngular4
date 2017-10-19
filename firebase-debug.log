@@ -1,0 +1,93 @@
+[debug] [2017-10-19T13:00:16.953Z] ----------------------------------------------------------------------
+[debug] [2017-10-19T13:00:16.955Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\looper\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2017-10-19T13:00:16.955Z] CLI Version:   3.13.1
+[debug] [2017-10-19T13:00:16.956Z] Platform:      win32
+[debug] [2017-10-19T13:00:16.956Z] Node Version:  v6.11.0
+[debug] [2017-10-19T13:00:16.956Z] Time:          Thu Oct 19 2017 20:00:16 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:16.956Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-10-19T13:00:16.973Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-10-19T13:00:16.973Z] > authorizing via signed-in user
+[debug] [2017-10-19T13:00:16.975Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-10-19T13:00:16.976Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/P9MK1NvQfT_H9CPf335DFVAA7OHS5Wxzx_nSTXfyUps',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Oct 19 2017 20:00:16 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:19.426Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T13:00:19.493Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/testang-4cd3a  
+ Thu Oct 19 2017 20:00:19 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:22.019Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T13:00:22.021Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/testang-4cd3a/tokens  
+ Thu Oct 19 2017 20:00:22 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:23.354Z] <<< HTTP RESPONSE 200
+[info] 5
+[info] 
+[info] === Deploying to 'testang-4cd3a'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2017-10-19T13:00:34.162Z] >>> HTTP REQUEST PUT https://testang-4cd3a.firebaseio.com/.settings/rules.json?dryRun=true {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Thu Oct 19 2017 20:00:34 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:37.171Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax is valid
+[debug] [2017-10-19T13:00:37.177Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/testang-4cd3a  
+ Thu Oct 19 2017 20:00:37 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:50.543Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2017-10-19T13:00:50.549Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/testang-4cd3a:test { source: { files: [ [Object] ] } } 
+ Thu Oct 19 2017 20:00:50 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:56.385Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2017-10-19T13:00:56.414Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/testang-4cd3a:test { source: { files: [ [Object] ] } } 
+ Thu Oct 19 2017 20:00:56 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:59.976Z] <<< HTTP RESPONSE 200
+[info] +  firestore: rules file firestore.rules compiled successfully
+[debug] [2017-10-19T13:00:59.984Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "dependencies": {
+    "firebase-admin": "~5.4.0",
+    "firebase-functions": "^0.7.0"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[info] i  runtimeconfig: ensuring necessary APIs are enabled...
+[debug] [2017-10-19T13:00:59.993Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/testang-4cd3a?view=CONSUMER_VIEW  
+ Thu Oct 19 2017 20:00:59 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:00:59.995Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/testang-4cd3a?view=CONSUMER_VIEW  
+ Thu Oct 19 2017 20:00:59 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:01:04.704Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2017-10-19T13:01:09.309Z] <<< HTTP RESPONSE 200
+[info] +  runtimeconfig: all necessary APIs are enabled
+[debug] [2017-10-19T13:01:09.314Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/testang-4cd3a  
+ Thu Oct 19 2017 20:01:09 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:01:09.315Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/testang-4cd3a/apiKeys  
+ Thu Oct 19 2017 20:01:09 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:01:12.196Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T13:01:17.784Z] <<< HTTP RESPONSE 200
+[info] i  storage: uploading rules storage.rules...
+[debug] [2017-10-19T13:01:17.813Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/testang-4cd3a/rulesets { source: { files: [ [Object] ] } } 
+ Thu Oct 19 2017 20:01:17 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:01:19.873Z] <<< HTTP RESPONSE 200
+[debug] [2017-10-19T13:01:19.874Z] [rules] created ruleset projects/testang-4cd3a/rulesets/6c1ccf7a-6d5c-43f6-81cd-b950ec620291
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2017-10-19T13:01:19.879Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/testang-4cd3a/rulesets { source: { files: [ [Object] ] } } 
+ Thu Oct 19 2017 20:01:19 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:01:19.881Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/testang-4cd3a/databases/(default)/indexes  
+ Thu Oct 19 2017 20:01:19 GMT+0700 (SE Asia Standard Time)
+[debug] [2017-10-19T13:01:23.134Z] Error: read ECONNRESET
+    at exports._errnoException (util.js:1018:11)
+    at TLSWrap.onread (net.js:568:26)
+[error] 
+[error] Error: Server Error. read ECONNRESET

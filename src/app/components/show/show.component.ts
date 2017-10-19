@@ -7,7 +7,7 @@ import { ShowDataService } from '../../services/show-data.service';
 })
 export class ShowComponent implements OnInit {
 
-  private todoList: Todo;
+   todoList: Todo;
   private userList: User;
 
   constructor(private showdataService: ShowDataService) { }
