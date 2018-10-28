@@ -34,8 +34,8 @@
     </tbody>
   </table>
 
-  <br/>
-  <table *ngIf="isEditable == true" class="table" class="text-right">
+  <br />
+  <table *ngIf="isEditable" class="table" class="text-right">
     <tr>
       <td>
         <label for="name"> Name: </label>
@@ -62,7 +62,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <br/>
+        <br />
         <button (click)="updateUser()" class="btn btn-success">Update</button>
       </td>
     </tr>
